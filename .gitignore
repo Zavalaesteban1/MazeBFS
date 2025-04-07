@@ -64,3 +64,14 @@ compile_commands.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Project-specific executables (without extension)
+main
+solve
+
+# Any other non-tracked files specific to this project
+# Add any temporary testing files or output files here
+*_test
+*_output
+*_result
+*.dSYM/
