@@ -224,7 +224,7 @@ int main()
 		test(solve(maze) == soln);
 	}
 
-	cout << "Assignment complete." << endl;
+	cout << "You have passsed all the test with your bfs algo" << endl;
 }
 
 
