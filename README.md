@@ -2,36 +2,7 @@
 
 This program solves the problem of finding the shortest path through a maze. Given any maze represented as a string with '#' as walls and spaces as paths, the program finds the shortest path from one edge to another edge, using a breadth-first search algorithm on a graph representation of the maze.
 
-## C++ Implementation Details
-
 This maze solver is implemented in C++ using object-oriented design principles and standard library containers. Here's an overview of the implementation:
-
-### Class Structure
-- **mazeGraph**: The main class that encapsulates the graph representation of the maze
-  - Contains a nested **Vertex** class representing nodes in the graph
-  - Provides methods for graph construction and manipulation
-
-### Key Data Structures
-- **unordered_map<string, Vertex*> vertexMap**: Maps coordinate strings (e.g., "1,2") to Vertex pointers
-- **vector<Vertex*> neighs**: Each Vertex contains a vector of pointers to its neighbors
-- **queue<Vertex*>**: Used for BFS traversal
-- **unordered_set<Vertex*>**: Tracks visited vertices during BFS
-- **unordered_map<Vertex*, Vertex*> parent**: Maps vertices to their parent in the BFS path
-
-### Memory Management
-- Dynamic memory allocation is used for Vertex objects
-- Proper cleanup is implemented in the mazeGraph destructor and during graph rebuilding
-- Vertices are allocated with `new` and properly deleted when no longer needed
-
-### Algorithm Implementation
-- Graph construction from the maze string is performed in O(n) time where n is the length of the input
-- The BFS algorithm runs in O(V+E) time where V is the number of vertices and E is the number of edges
-- String parsing and manipulation is used to extract coordinates and build the graph
-
-### Interface
-- A global `solve(string maze)` function provides a simple interface to the solver
-- This function creates a mazeGraph instance internally and delegates to its solve method
-- The returned string represents the maze with 'o' characters marking the shortest path
 
 # Visualization of Maze Solver Execution
 
@@ -306,3 +277,34 @@ Result:
 ```
 
 The BFS algorithm guarantees that this is the shortest possible path between the start and end points in the maze.
+
+
+(Additonal Information)
+## C++ Implementation Details
+### Class Structure
+- **mazeGraph**: The main class that encapsulates the graph representation of the maze
+  - Contains a nested **Vertex** class representing nodes in the graph
+  - Provides methods for graph construction and manipulation
+
+### Key Data Structures
+- **unordered_map<string, Vertex*> vertexMap**: Maps coordinate strings (e.g., "1,2") to Vertex pointers
+- **vector<Vertex*> neighs**: Each Vertex contains a vector of pointers to its neighbors
+- **queue<Vertex*>**: Used for BFS traversal
+- **unordered_set<Vertex*>**: Tracks visited vertices during BFS
+- **unordered_map<Vertex*, Vertex*> parent**: Maps vertices to their parent in the BFS path
+
+### Memory Management
+- Dynamic memory allocation is used for Vertex objects
+- Proper cleanup is implemented in the mazeGraph destructor and during graph rebuilding
+- Vertices are allocated with `new` and properly deleted when no longer needed
+
+### Algorithm Implementation
+- Graph construction from the maze string is performed in O(n) time where n is the length of the input
+- The BFS algorithm runs in O(V+E) time where V is the number of vertices and E is the number of edges
+- String parsing and manipulation is used to extract coordinates and build the graph
+
+### Interface
+- A global `solve(string maze)` function provides a simple interface to the solver
+- This function creates a mazeGraph instance internally and delegates to its solve method
+- The returned string represents the maze with 'o' characters marking the shortest path
+
